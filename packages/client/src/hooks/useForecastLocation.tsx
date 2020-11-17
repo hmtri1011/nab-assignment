@@ -7,24 +7,27 @@ type ForecastResult = {
 
 const useForecastLocation = (locationId: number | undefined) => {
   const [forecast, setForecast] = useState<Forecast>()
+  const [loading, setLoading] = useState(false)
 
   const getForecast = useCallback(async () => {
     if (!locationId) {
       return
     }
 
+    setLoading(true)
     const result: ForecastResult = await fetch(
       `/api/location/${locationId}`
     ).then(res => res.json())
 
     setForecast(result?.forecast)
+    setLoading(false)
   }, [locationId])
 
   useEffect(() => {
     getForecast()
   }, [getForecast])
 
-  return forecast
+  return { data: forecast, loading }
 }
 
 export default useForecastLocation

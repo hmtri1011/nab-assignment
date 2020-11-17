@@ -6,7 +6,7 @@ const useSearch = () => {
 
   const handleSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    if (!value || value.length < 3) {
+    if (!value || value.length < 2) {
       return
     }
 
