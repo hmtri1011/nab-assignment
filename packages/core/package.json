@@ -1,0 +1,12 @@
+{
+  "name": "@nab-assignment/core",
+  "version": "1.0.0",
+  "description": "Core packages for nab-assignment",
+  "main": "index.js",
+  "author": "Tri Hoang",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc -d -w",
+    "build": "tsc -d"
+  }
+}
