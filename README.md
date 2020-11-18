@@ -9,7 +9,7 @@ This project is a assignment that allow user to search location and show 5 days 
 - Lerna and Yarn workspaces for monorepos.
 - Create React App v4
 - NodeJS and Express for API proxy
-- TypeScript
+- TypeScript and TailwindCSS
 - Jest for testing
 
 Why am I using this stack? Because there is an CORS issue on metaweather API so I decide to use lerna to setup monorepos to have Web client and a proxy backend to by pass CORS issue. I'm able to use another API but I think I will learn more interested things if I use lerna.
