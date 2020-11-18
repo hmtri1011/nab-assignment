@@ -4,7 +4,7 @@
 
 This project is a assignment that allow user to search location and show 5 days weather forecast for that location.
 
-# Technical stack!
+### Technical stack!
 
 - Lerna and Yarn workspaces for monorepos.
 - Create React App v4
@@ -14,7 +14,7 @@ This project is a assignment that allow user to search location and show 5 days 
 
 Why am I using this stack? Because there is an CORS issue on metaweather API so I decide to use lerna to setup monorepos to have Web client and a proxy backend to by pass CORS issue. I'm able to use another API but I think I will learn more interested things if I use lerna.
 
-# How to run this project
+### How to run this project
 
 Clone and install dependencies for this project
 
@@ -24,14 +24,14 @@ $ cd nab-assignment
 $ yarn
 ```
 
-# Run on production environment
+### Run on production environment
 
 ```sh
 $ yarn build
 $ yarn start
 ```
 
-# Run on development environment:
+### Run on development environment:
 
 You might need 2 terminal tabs or windows to run
 On your first terminal
