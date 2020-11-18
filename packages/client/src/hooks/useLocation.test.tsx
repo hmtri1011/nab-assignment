@@ -14,12 +14,15 @@ beforeEach(() => {
 })
 
 describe('useLocation hook', () => {
-  it('should show loading state', () => {
+  it('should show loading state', async () => {
     // @ts-ignore
     fetch.mockResponseOnce(JSON.stringify(mockData))
-    const { result } = renderHook(() => useLocation('london'))
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useLocation('london')
+    )
 
     expect(result.current.loading).toBe(true)
+    await waitForNextUpdate()
   })
 
   it('hide loading when have data', async () => {

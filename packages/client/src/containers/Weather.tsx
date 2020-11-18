@@ -19,7 +19,7 @@ const Weather: React.FC<WeatherProps> = () => {
   ])
 
   return (
-    <main className='py-6 bg-bg'>
+    <main className='py-6 bg-bg' data-testid='weather'>
       <div className='container min-h-screen'>
         <div className='w-1/2'>
           <Search onChange={handleSearch} />
