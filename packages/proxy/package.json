@@ -2,7 +2,7 @@
   "name": "@nab-assignment/proxy",
   "version": "1.0.0",
   "description": "Proxy server for calling metaweather APIs",
-  "main": "index.js",
+  "main": "app.js",
   "author": "Tri Hoang",
   "license": "MIT",
   "scripts": {
