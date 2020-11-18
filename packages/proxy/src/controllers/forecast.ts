@@ -1,8 +1,7 @@
 import express from 'express'
-import axios, { AxiosError } from 'axios'
-import { Location, Forecast } from '@nab-assignment/core/types'
+import { AxiosError } from 'axios'
 
-const baseUrl = 'https://www.metaweather.com/api'
+import * as ForecastServices from '../services/forecast'
 
 export const getLocations = async (
   req: express.Request,
@@ -11,11 +10,8 @@ export const getLocations = async (
   const { query } = req.query
 
   try {
-    const result = await axios.get<Location[]>(
-      `${baseUrl}/location/search/?query=${query}`
-    )
+    const location = await ForecastServices.getLocations(query as string)
 
-    const location = result.data?.[0]
     return res.json({ location })
   } catch (err) {
     console.error((err as AxiosError).response?.data)
@@ -30,8 +26,7 @@ export const getLocationForecast = async (
   const { woeid } = req.params
 
   try {
-    const result = await axios.get<Forecast>(`${baseUrl}/location/${woeid}`)
-    const forecast = result.data
+    const forecast = await ForecastServices.getLocationForecast(+woeid)
 
     return res.json({ forecast })
   } catch (err) {
