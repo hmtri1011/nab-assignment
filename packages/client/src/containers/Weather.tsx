@@ -26,6 +26,11 @@ const Weather: React.FC<WeatherProps> = () => {
         </div>
         <div className='mt-6'>
           {loading && <div>Loading.....!</div>}
+          {!loading && !locationForecast && (
+            <div>
+              <p>There is no data...</p>
+            </div>
+          )}
           {!loading && locationForecast && (
             <div className='grid grid-cols-7 col-gap-2 items-center'>
               <div className='col-span-1 font-medium text-lg text-primary'>
