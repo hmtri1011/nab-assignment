@@ -6,11 +6,12 @@ type ForecastResult = {
 }
 
 const useForecastLocation = (locationId: number | undefined) => {
-  const [forecast, setForecast] = useState<Forecast>()
+  const [forecast, setForecast] = useState<Forecast | null>()
   const [loading, setLoading] = useState(false)
 
   const getForecast = useCallback(async () => {
     if (!locationId) {
+      setForecast(null)
       return
     }
 
